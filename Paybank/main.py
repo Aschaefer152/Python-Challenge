@@ -30,7 +30,7 @@ with open(csvpath) as csvfile:
     # Read each row of data after the header
     for row in csvreader:
         total_months+=1
-        total_s= sum()
-
+        total_s += int(row[1])
+    
     print("Total Months :" + str(total_months))
-    print("Total :" + int(total_s))
+    print("Total :" + str(total_s))
