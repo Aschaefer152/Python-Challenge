@@ -6,7 +6,7 @@ import os
 import csv
 
 
-csvpath = os.path.join('Resources', 'election_data.csv')
+csvpath = os.path.join('Resourcespoll', 'election_data.csv')
 # Method 2: Improved Reading using CSV module
 
 #create lists
@@ -39,13 +39,13 @@ with open(csvpath, newline="") as csvfile:
             candidate_list.append(candidate)
             vote_counts.append(1)
 
-    vote_percentage=[]
+    percentages=[]
     max_votes = vote_counts[0]
     max_index=0
     #calculate the vote_percentage(percentage of votes) for each candidate
     for count in range(len(candidate_list)):
         vote_percentage = vote_counts[count]/total_votes * 100
-        vote_percentage.append(vote_percentage)
+        percentages.append(vote_percentage)
 
         #find winner
         if vote_counts[count] > max_votes:
@@ -59,8 +59,10 @@ with open(csvpath, newline="") as csvfile:
     print("Election Results")
     print("----------------------")
     print(f"Total Votes : {total_votes}")
+    print("----------------------")
+    print("Percentage of Total Votes Won by Candidate:")
     for count in range(len(candidate_list)):
-        print(f"{candidate_list[count]}: {vote_percentage[count]}% ({vote_counts[count]})")
+        print(f"{candidate_list[count]}: {percentages[count]}% ({vote_counts[count]})")
     print("----------------------")
     print(f"Winner: {winner}")
     print("----------------------")
