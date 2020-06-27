@@ -17,7 +17,7 @@ with open(csvpath, newline="", encoding="utf-8") as csvfile:
    # Read the header row first (skip this step if there is now header)
    csv_header = next(csvreader)
  
-   #create the variables to import the financial analysis total of 5 varibales
+   #create the variables to import the financial analysis 
    total_months= []
    total_sum = []
    monthly_changes = []
